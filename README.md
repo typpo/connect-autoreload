@@ -5,7 +5,7 @@ connect-autoreload supports a basic javascript client that reloads the page when
 
 ## Installation
 
-`npm install connect-autoreload`
+`npm install connect-autoreload`, or add connected-autoreload to your package.json.
 
 ## Setup
 
