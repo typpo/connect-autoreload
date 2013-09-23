@@ -1,27 +1,34 @@
-A server that watches files for changes and notifies long-polling clients.
+connect-autoreload
+-----------------
 
-## Basic setup
+connect-autoreload supports a basic javascript client that reloads the page whenever files are changed.  This is useful if you're a frontend developer and you're sick of manually refreshing the page to reflect your changes.
 
-### Server
+## Setup
 
-See the basic app in `examples/`.  It's easy to add as middleware in your own express app:
+See the standalone app in `example/`.  Edit the config, start the server (`node path/to/app.js`), drop in the js, and you're good to go.
+
+### Adding autoreload to an existing server
+
+If you already have an express app, it's easy to add autoreload middleware:
 
     var autoreload = require('connect-autoreload')
+    
     var config = {
       watch_dirs: 'js html css/compiled thirdparty/frontend',
       ignore_regex: /\.sw[poax]$/,
     };
+    
     app.use(autoreload(config));
 
 This will set up the default endpoint, `waitForReload/`.
 
-If you are not using express to serve your content, then you can run the `example/` server by itself - edit `autoreload-config.js` and run `node app.js`.
-
 It's recommend to start the node app from your project's root directory.  That way, `watch_dirs` will correctly work with relative paths.  `examples/start.sh` is a shorthand for this if you use git.
 
-### Client
+### Including the Javascript client
 
-Include `js/autoreload.js` on your page and it will reload the page when the server detects changes.  To start listening for changes, call `AutoReload.watch('http://localhost:8080')` (change the port to whichever the autocomplete server is running on).
+Include `js/autoreload.js` on your page.  To start listening and reload the page when changes happen, call `AutoReload.watch('http://localhost:8080')` (change the port to whichever the autocomplete server is running on).
+
+You can call `AutoReload.stop()` at any point to cancel the refresh-on-change behavior.
 
 ## https setup
 
