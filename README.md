@@ -2,29 +2,26 @@ A server that watches files for changes and notifies long-polling clients.
 
 ## Basic setup
 
-Edit config.js and decide which directories you want to watch.
+See the basic app in `examples/`.  To put in your own app:
 
-Let's say your project file structure is:
+    var autoreload = require('connect-autoreload')
+    var config = {
+      watch_dirs: 'js html css/compiled thirdparty/frontend',
+      ignore_regex: /\.sw[poax]$/,
+    };
+    app.use(autoreload(config));
 
-    js/
-      vendor/
-      foo/
-    sass/
-      compiled/
-    templates/
-    README
+This will set up the default endpoint, `waitForReload/`.
 
-Your `watch_dirs` setting may be "js sass/compiled templates".
+If you are not using express to serve your content, then you can run the `example/` server by itself.
 
-You can set a regex to ignore certain files or directories.  By default, it ignores changes in vim swap files.
+It's recommend to start the node app from your project's root directory.  That way, `watch_dirs` will correctly work with relative paths.  `./start.sh` is a shorthand for this if you use git.
 
-Install dependencies with `npm install`.
-
-Start the node app from your project's root directory.  `./start.sh` is a shorthand for this if you use git.  Then run AutoReload.watch('http://localhost:60000').
+Include `js/autoreload.js` on your page and it will reload the page when the server detects changes.  To start watching for changes, run `AutoReload.watch('http://localhost:8080')` (or whichever port your server is running on).
 
 ## https setup
 
-You either need to add a valid cert to your node app, or proxy via Apache or nginx.
+If your web server requires an https connection, your connect app must either have a valid cert, or you can proxy via Apache or nginx.
 
 Example Apache config using ProxyPass:
 
