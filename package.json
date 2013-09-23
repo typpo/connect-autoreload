@@ -1,10 +1,13 @@
 {
   "name": "connect-autoreload",
   "description": "Autoreload server - watches your files for changes and handles client polling.",
+  "repository": "https://github.com/typpo/connected-autoreload.git",
   "version": "0.0.1",
-  "author": "Ian Webster <ian_npm@ianww.com>",
+  "author": "Ian Webster <ian_npm@ianww.com> (http://ianww.com)",
   "engines": ["node"],
   "dependencies": {
     "chokidar": ">=0.6.3"
-  }
+  },
+  "license" : "MIT",
+  "main": "./index.js"
 }
