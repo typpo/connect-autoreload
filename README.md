@@ -3,6 +3,10 @@ connect-autoreload
 
 connect-autoreload supports a basic javascript client that reloads the page whenever files are changed.  This is useful if you're a frontend developer and you're sick of manually refreshing the page to reflect your changes.
 
+## Installation
+
+`npm install connect-autoreload`
+
 ## Setup
 
 See the standalone app in `example/`.  Edit the config, start the server (`node path/to/app.js`), drop in the js, and you're good to go.
