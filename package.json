@@ -1,0 +1,10 @@
+{
+  "name": "connect-autoreload",
+  "description": "Autoreload server - watches your files for changes and handles client polling.",
+  "version": "0.0.1",
+  "author": "Ian Webster <ian_npm@ianww.com>",
+  "engines": ["node"],
+  "dependencies": {
+    "chokidar": ">=0.6.3"
+  }
+}
