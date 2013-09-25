@@ -16,12 +16,12 @@ See the standalone app in `example/`.  Edit the config, start the server (`node 
 If you already have an express app, it's easy to add autoreload middleware:
 
     var autoreload = require('connect-autoreload')
-    
+
     var config = {
       watch_dirs: 'js html css/compiled thirdparty/frontend',
       ignore_regex: /\.sw[poax]$/,
     };
-    
+
     app.use(autoreload(config));
 
 This will set up the default endpoint, `waitForReload/`.
@@ -30,7 +30,9 @@ It's recommend to start the node app from your project's root directory.  That w
 
 ### Including the Javascript client
 
-Include `js/autoreload.js` on your page.  To start listening and reload the page when changes happen, call `AutoReload.watch('http://localhost:8080')` (change the port to whichever the autocomplete server is running on).
+`<script src="http://localhost:60000/autoreload.js"></script>` or include `js/autoreload.js` on your page.
+
+To start reloading the page when changes happen, call `AutoReload.watch('http://localhost:8080')` (change the port to whichever the autocomplete server is running on).
 
 You can call `AutoReload.stop()` at any point to cancel the refresh-on-change behavior.
 
