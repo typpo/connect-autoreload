@@ -1,7 +1,11 @@
 connect-autoreload
 -----------------
 
-connect-autoreload supports a basic javascript client that reloads the page whenever files are changed.  This is useful if you're a frontend developer and you're sick of manually refreshing the page to reflect your changes.
+connect-autoreload is connect middleware that supports a basic javascript client.  The server watches for file changes and the client reloads your page when files are changed.  This is useful if you're a frontend developer and you're sick of manually refreshing the page to reflect your changes.
+
+## Standalone reload script
+
+If you're looking for the easiest way to refresh your page when files change, check out [autoreload](https://github.com/typpo/autoreload).  If you want to integrate the autoreload behavior into your own connect/express server, read on.
 
 ## Installation
 
