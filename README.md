@@ -36,9 +36,9 @@ It's recommend to start the node app from your project's root directory.  That w
 
 `<script src="http://localhost:60000/autoreload.js"></script>` or include `js/autoreload.js` on your page.
 
-To start reloading the page when changes happen, call `AutoReload.watch('http://localhost:8080')` (change the port to whichever the autocomplete server is running on).
+To start reloading the page when changes happen, call `AutoReload.Watch()` ~~(change the port to whichever the autocomplete server is running on)~~. Specifying the autocomplete server is currrently not supported.
 
-You can call `AutoReload.stop()` at any point to cancel the refresh-on-change behavior.
+You can call `AutoReload.Stop()` at any point to cancel the refresh-on-change behavior.
 
 ## https setup
 
