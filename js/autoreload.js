@@ -3,10 +3,10 @@
 
 ;function AutoReload(window, $) {
   var xhr;
-  this.Watch = function() {
+  this.Watch = function(host) {
     (function poll() {
       xhr = $.ajax({
-        url: '/waitForReload',
+        url: (host || '') + '/waitForReload',
         success: function(data) {
           window.location.reload();
         },
