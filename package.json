@@ -2,7 +2,7 @@
   "name": "connect-autoreload",
   "description": "Autoreload server - watches your files for changes and handles client polling.",
   "repository": "https://github.com/typpo/connect-autoreload.git",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Ian Webster <ian_npm@ianww.com> (http://ianww.com)",
   "engines": ["node"],
   "dependencies": {
