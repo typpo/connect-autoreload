@@ -24,6 +24,7 @@ If you already have an express app, it's easy to add autoreload middleware:
     var config = {
       watch_dirs: 'js html css/compiled thirdparty/frontend',
       ignore_regex: /\.sw[poax]$/,
+      delay: 150,  // wait 150ms before reloading
     };
 
     app.use(autoreload(config));
