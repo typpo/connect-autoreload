@@ -6,7 +6,7 @@
   this.Watch = function(host) {
     (function poll() {
       xhr = $.ajax({
-        url: (host || '') + '/waitForReload',
+        url: '://' + (host || '') + '/waitForReload',
         success: function(data) {
           window.location.reload();
         },
